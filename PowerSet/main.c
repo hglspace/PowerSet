@@ -10,15 +10,18 @@
 
 int main(int argc, const char * argv[]) {
  
-    char c[3]={'1','2','3'};
-    char c1[3]={'\0'};
-    void powerSet(int i,int n,char c[],char c1[]);
+    char c[3]={'1','2','3'};//集合A
+    char c1[3]={'\0'};//集合A的幂集的子集
+    void powerSet(int i,int n,char c[],char c1[]);//求集合的幂集的函数
     powerSet(0, 2, c, c1);
     return 0;
 }
 
+/*
+  求集合的幂集的函数
+ */
 void powerSet(int i,int n,char c[],char c1[]){
-    if(i>n){
+    if(i>n){//当i大于n，说明已经遍历到树的叶子层了
         int j;
         printf("[\t");
         for(j=0;j<=n;j++){
@@ -28,9 +31,9 @@ void powerSet(int i,int n,char c[],char c1[]){
         }
         printf("]\n");
     }else{
-        c1[i]=c[i];
+        c1[i]=c[i];//取第i个元素
         powerSet(i+1, n, c, c1);
-        c1[i]='\0';
+        c1[i]='\0';//把第i个位置的元素的值置为'\0',相当于舍弃第i个元素
         powerSet(i+1, n, c, c1);
     }
 }
