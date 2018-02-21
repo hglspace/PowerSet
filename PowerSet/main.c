@@ -21,7 +21,7 @@ int main(int argc, const char * argv[]) {
   求集合的幂集的函数
  */
 void powerSet(int i,int n,char c[],char c1[]){
-    if(i>n){//当i大于n，说明已经遍历到树的叶子层了
+    if(i>n){//I从0开始，当i大于2时，说明所有的元素都已经筛选过了,结果已经出来了，可以输出了
         int j;
         printf("[\t");
         for(j=0;j<=n;j++){
